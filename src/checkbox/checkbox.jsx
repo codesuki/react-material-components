@@ -13,6 +13,7 @@ const MATCHES = getMatchesProperty(HTMLElement.prototype);
 export default class Checkbox extends React.PureComponent {
   static propTypes = {
     controlId: React.PropTypes.string,
+    value: React.PropTypes.string.isRequired,
     checked: React.PropTypes.bool,
     indeterminate: React.PropTypes.bool,
     onChange: React.PropTypes.func,
@@ -26,7 +27,7 @@ export default class Checkbox extends React.PureComponent {
 
   state = {
     classes: new ImmutableSet(),
-    css: new ImmutableMap(),
+    rippleCss: new ImmutableMap(),
 
     checked: this.props.checked,
     indeterminate: this.props.indeterminate,
@@ -51,7 +52,7 @@ export default class Checkbox extends React.PureComponent {
       this.refs.checkbox.indeterminate = this.state.indeterminate;
     }
     if (this.refs.root) {
-      this.state.css.forEach((v, k) => {
+      this.state.rippleCss.forEach((v, k) => {
         this.refs.root.style.setProperty(k, v);
       });
     }
@@ -73,6 +74,7 @@ export default class Checkbox extends React.PureComponent {
           id={this.props.controlId}
           type="checkbox"
           className="mdc-checkbox__native-control"
+          value={this.props.value}
           checked={this.state.checked}
           onChange={(evt) => {
             this.setState({
@@ -141,7 +143,7 @@ export default class Checkbox extends React.PureComponent {
 
   rippleFoundation = new MDCRippleFoundation(Object.assign(MDCRipple.createAdapter(this), {
     isUnbounded: () => true,
-    isSurfaceActive: () => this.refs.root[MATCHES](':active'),
+    isSurfaceActive: () => this.refs.checkbox[MATCHES](':active'),
     addClass: (className) => {
       this.setState(prevState => ({
         classes: prevState.classes.add(className),
@@ -152,15 +154,19 @@ export default class Checkbox extends React.PureComponent {
         classes: prevState.classes.remove(className),
       }));
     },
-    registerInteractionHandler: (evtType, handler) => {
-      this.refs.checkbox.addEventListener(evtType, handler);
+    registerInteractionHandler: (type, handler) => {
+      if (this.refs.checkbox) {
+        this.refs.checkbox.addEventListener(type, handler);
+      }
     },
-    deregisterInteractionHandler: (evtType, handler) => {
-      this.refs.checkbox.removeEventListener(evtType, handler);
+    deregisterInteractionHandler: (type, handler) => {
+      if (this.refs.checkbox) {
+        this.refs.checkbox.removeEventListener(type, handler);
+      }
     },
     updateCssVariable: (varName, value) => {
       this.setState(prevState => ({
-        css: prevState.css.set(varName, value),
+        rippleCss: prevState.rippleCss.set(varName, value),
       }));
     },
     computeBoundingRect: () => {

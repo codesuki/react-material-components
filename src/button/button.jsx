@@ -29,7 +29,7 @@ export default class Button extends React.PureComponent {
 
   state = {
     classes: new ImmutableSet(),
-    css: new ImmutableMap(),
+    rippleCss: new ImmutableMap(),
   }
 
   componentDidMount() {
@@ -37,7 +37,7 @@ export default class Button extends React.PureComponent {
   }
 
   componentDidUpdate() {
-    this.state.css.forEach((v, k, s) => {
+    this.state.rippleCss.forEach((v, k) => {
       this.refs.root.style.setProperty(k, v);
     });
   }
@@ -80,27 +80,22 @@ export default class Button extends React.PureComponent {
           classes: prevState.classes.remove(className),
         }));
       },
-      registerInteractionHandler: (evtType, handler) => {
+      registerInteractionHandler: (type, handler) => {
         if (this.refs.root) {
-          this.refs.root.addEventListener(evtType, handler);
+          this.refs.root.addEventListener(type, handler);
         }
       },
-      deregisterInteractionHandler: (evtType, handler) => {
+      deregisterInteractionHandler: (type, handler) => {
         if (this.refs.root) {
-          this.refs.root.removeEventListener(evtType, handler);
+          this.refs.root.removeEventListener(type, handler);
         }
-      },
-      registerResizeHandler: (handler) => {
-        window.addEventListener('resize', handler);
-      },
-      deregisterResizeHandler: (handler) => {
-        window.removeEventListener('resize', handler);
       },
       updateCssVariable: (varName, value) => {
-        this.setState({ css: this.state.css.set(varName, value) });
+        this.setState(prevState => ({
+          rippleCss: prevState.rippleCss.set(varName, value),
+        }));
       },
       computeBoundingRect: () => this.refs.root.getBoundingClientRect(),
-      getWindowPageOffset: () => ({ x: window.pageXOffset, y: window.pageYOffset }),
     }));
 }
 
