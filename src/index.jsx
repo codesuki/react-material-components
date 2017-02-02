@@ -20,7 +20,7 @@ export class Test extends React.Component {
           <Radio name="group1" label="my label 3" />
         </div>
         <div>
-          <Snackbar />
+          <Snackbar message="Hello Snackbar" />
         </div>
         <div>
           <IconToggle />
