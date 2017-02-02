@@ -2,15 +2,11 @@
 # yarn lockfile v1
 
 
-"@material/animation@^0.1.1", "@material/animation@^0.1.3":
+"@material/animation@^0.1.3":
   version "0.1.3"
   resolved "https://registry.yarnpkg.com/@material/animation/-/animation-0.1.3.tgz#64028ff660d535c7cb254e413719b22b9e9d3f8c"
 
-"@material/auto-init@^0.1.0":
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/@material/auto-init/-/auto-init-0.1.1.tgz#16a5c37061be71bdcb7b5abc30f6e9785d58c777"
-
-"@material/base@^0.1.0", "@material/base@^0.1.1":
+"@material/base@^0.1.1":
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/@material/base/-/base-0.1.1.tgz#6933ea13130cee52c92e98a9c7c556a743f131fb"
 
@@ -39,14 +35,6 @@
     "@material/animation" "^0.1.3"
     "@material/base" "^0.1.1"
     "@material/theme" "^0.1.1"
-
-"@material/checkbox@file:../material-components-web/packages/mdc-checkbox/":
-  version "0.1.2"
-  dependencies:
-    "@material/animation" "^0.1.1"
-    "@material/base" "^0.1.0"
-    "@material/ripple" "^0.1.1"
-    "@material/theme" "^0.1.0"
 
 "@material/drawer@^0.1.2":
   version "0.1.2"
@@ -119,7 +107,7 @@
     "@material/ripple" "^0.1.2"
     "@material/theme" "^0.1.1"
 
-"@material/ripple@^0.1.1", "@material/ripple@^0.1.2":
+"@material/ripple@^0.1.2":
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/@material/ripple/-/ripple-0.1.2.tgz#06f3b17dbba3137b27a68f256644e2d6a32bba62"
   dependencies:
@@ -164,7 +152,7 @@
     "@material/theme" "^0.1.1"
     "@material/typography" "^0.1.1"
 
-"@material/theme@^0.1.0", "@material/theme@^0.1.1":
+"@material/theme@^0.1.1":
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/@material/theme/-/theme-0.1.1.tgz#df59c1efce70ab7e5ef551f1cb59a4f38ca2a48a"
 
@@ -2904,31 +2892,6 @@ lower-case@^1.1.1:
 macaddress@^0.2.8:
   version "0.2.8"
   resolved "https://registry.yarnpkg.com/macaddress/-/macaddress-0.2.8.tgz#5904dc537c39ec6dbefeae902327135fa8511f12"
-
-material-components-web@^0.3.0:
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/material-components-web/-/material-components-web-0.3.0.tgz#a51fa547a0146a70320109c2b4269752213b3be5"
-  dependencies:
-    "@material/animation" "^0.1.3"
-    "@material/auto-init" "^0.1.0"
-    "@material/base" "^0.1.1"
-    "@material/button" "^0.2.0"
-    "@material/card" "^0.1.2"
-    "@material/checkbox" "^0.1.2"
-    "@material/drawer" "^0.1.2"
-    "@material/elevation" "^0.1.2"
-    "@material/fab" "^0.3.0"
-    "@material/form-field" "^0.1.1"
-    "@material/icon-toggle" "^0.1.2"
-    "@material/list" "^0.2.0"
-    "@material/menu" "^0.1.2"
-    "@material/radio" "^0.1.2"
-    "@material/ripple" "^0.1.2"
-    "@material/select" "^0.2.0"
-    "@material/snackbar" "^0.1.2"
-    "@material/textfield" "^0.2.0"
-    "@material/theme" "^0.1.1"
-    "@material/typography" "^0.1.1"
 
 math-expression-evaluator@^1.2.14:
   version "1.2.15"
