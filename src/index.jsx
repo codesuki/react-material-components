@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import classnames from 'classnames';
 import Button from './button/button.jsx';
 import Checkbox from './checkbox/checkbox.jsx';
 import Card from './card/card.jsx';
@@ -16,10 +15,12 @@ export class Test extends React.Component {
     return (
       <div>
         <div>
-          <Snackbar />
+          <Radio name="group1" label="my label" checked />
+          <Radio name="group1" label="my label 2" />
+          <Radio name="group1" label="my label 3" />
         </div>
         <div>
-          <Radio />
+          <Snackbar />
         </div>
         <div>
           <IconToggle />
