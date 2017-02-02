@@ -9,11 +9,17 @@ import { List, ListItem, ListDivider, ListGroup, ListGroupHeader } from './list/
 import IconToggle from './icon-toggle/iconToggle.jsx';
 import Radio from './radio/radio.jsx';
 import Snackbar from './snackbar/snackbar.jsx';
+import FloatingActionButton from './fab/fab.jsx';
 
 export class Test extends React.Component {
   render() {
     return (
       <div>
+        <div>
+          <FloatingActionButton icon="favorite" />
+          <FloatingActionButton icon="favorite" mini />
+          <FloatingActionButton icon="favorite" plain />
+        </div>
         <div>
           <Radio name="group1" label="my label" checked />
           <Radio name="group1" label="my label 2" />
@@ -23,7 +29,10 @@ export class Test extends React.Component {
           <Snackbar message="Hello Snackbar" />
         </div>
         <div>
-          <IconToggle />
+          <IconToggle
+            dataToggleOn='{"label": "Remove from favorites", "content": "favorite"}'
+            dataToggleOff='{"label": "Add to favorites", "content": "favorite_border"}'
+          />
         </div>
         <div>
           <Drawer />
