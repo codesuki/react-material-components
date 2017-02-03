@@ -58,6 +58,7 @@ export default class IconToggle extends React.PureComponent {
           'mdc-icon-toggle--disabled': this.props.disabled,
         })}
         role="button"
+        disabled={this.props.disabled}
         tabIndex={this.state.tabIndex}
         aria-pressed={this.state.attributes.get('aria-pressed')}
         aria-label={this.state.attributes.get('aria-label')}
