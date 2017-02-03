@@ -10,11 +10,30 @@ import IconToggle from './icon-toggle/iconToggle.jsx';
 import Radio from './radio/radio.jsx';
 import Snackbar from './snackbar/snackbar.jsx';
 import FloatingActionButton from './fab/fab.jsx';
+import Textfield from './textfield/textfield.jsx';
 
 export class Test extends React.Component {
   render() {
     return (
       <div>
+        <div>
+          <Textfield validationMessage="test" />
+        </div>
+        <div>
+          <Textfield required />
+        </div>
+        <div>
+          <Textfield disabled />
+        </div>
+        <div>
+          <Textfield />
+        </div>
+        <div>
+          <Textfield text="test" />
+        </div>
+        <div>
+          <Textfield persistantHelp />
+        </div>
         <div>
           <FloatingActionButton icon="favorite" />
           <FloatingActionButton icon="favorite" mini />
