@@ -4,14 +4,14 @@
     "transform-class-properties"
   ],
   "presets": [
-    ["latest", {"es2015": {"modules": false}}],
+    [
+      "latest",
+      {
+        "es2015": {
+          "modules": false
+        }
+      }
+    ],
     "react"
-  ],
-  "env": {
-    "start": {
-      "presets": [
-        "react-hmre"
-      ]
-    }
-  }
+  ]
 }
