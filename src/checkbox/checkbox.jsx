@@ -1,7 +1,9 @@
 import React from 'react';
 
 import { Set as ImmutableSet, Map as ImmutableMap } from 'immutable';
+
 import classnames from 'classnames';
+
 import { getCorrectEventName } from '@material/animation';
 import { MDCCheckboxFoundation } from '@material/checkbox';
 import { MDCRipple, MDCRippleFoundation } from '@material/ripple';
